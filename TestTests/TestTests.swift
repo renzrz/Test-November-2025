@@ -9,14 +9,39 @@ import XCTest
 @testable import Test
 
 final class TestTests: XCTestCase {
+    
+    var viewModel: ListViewModel!
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    override func setUp() {
+        super.setUp()
+        viewModel = ListViewModel(postsService: PostsServices.shared)
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    override func tearDown() {
+        viewModel = nil
+        super.tearDown()
     }
+
+    func testGetDataPosts_ShouldFetchSuccessfully() async throws {
+        // When
+        await viewModel.getDataPosts()
+        
+        XCTAssertFalse(viewModel.posts.isEmpty, "data kosojng.")
+        
+        if let first = viewModel.posts.first {
+            print("✅ Fetched post title: \(first.title ?? "No Title")")
+        }
+    }
+
+    func testGetDataPosts_Performance() async throws {
+        // You can test network performance (optional)
+        measure {
+            Task {
+                await self.viewModel.getDataPosts()
+            }
+        }
+    }
+
 
     func testExample() throws {
         // This is an example of a functional test case.
