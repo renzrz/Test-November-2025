@@ -1,6 +1,7 @@
 Maaf saya tidak bisa mengunakkan library / pod sama sekali.
 Cocoapod saya terdapat masalah (mulai dari alamofire, snapkit, krprogresshud)
-Berikut adalah contoh errornya
+
+Berikut adalah contoh errornya yang terjadi di alamofire
 
 error: Sandbox: rsync(14517) deny(1) file-write-create /Users/rz/Library/Developer/Xcode/DerivedData/Test-bxbwpwhpjyucbndtscqtepvxruoo/Build/Products/Debug-iphoneos/Test.app/Frameworks/Alamofire.framework/.Alamofire.jtH7oJ3Hjz (in target 'Test' from project 'Test')
 error: Sandbox: rsync(14517) deny(1) file-write-create /Users/rz/Library/Developer/Xcode/DerivedData/Test-bxbwpwhpjyucbndtscqtepvxruoo/Build/Products/Debug-iphoneos/Test.app/Frameworks/Alamofire.framework/.Info.plist.A806ah9WGI (in target 'Test' from project 'Test')
@@ -16,4 +17,4 @@ sent 1747939 bytes  received 64 bytes  215802839 bytes/sec
 total size is 1747329  speedup is 1.00
 rsync(14516): warning: child 14517 exited with status 23
 
-Terima kasih.
+Terima kasih sebelumnya.
