@@ -23,18 +23,16 @@ final class TestTests: XCTestCase {
     }
 
     func testGetDataPosts_ShouldFetchSuccessfully() async throws {
-        // When
         await viewModel.getDataPosts()
         
         XCTAssertFalse(viewModel.posts.isEmpty, "data kosojng.")
         
         if let first = viewModel.posts.first {
-            print("✅ Fetched post title: \(first.title ?? "No Title")")
+            print("\(first.title ?? "Ga ada data saama sekali")")
         }
     }
 
     func testGetDataPosts_Performance() async throws {
-        // You can test network performance (optional)
         measure {
             Task {
                 await self.viewModel.getDataPosts()
